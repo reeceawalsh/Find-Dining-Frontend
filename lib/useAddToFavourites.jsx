@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // this function adds an array of favourites to the users list of favourites. An array is needed because when you update the users list of favourites you must pass all of the favourites, not just one to add. It completely replaces the value in the database.
-export default async function addToFavourites(favourites, uuid) {
+export default async function useAddToFavourites(favourites, uuid) {
     console.log("favourites", favourites);
     console.log("user id", uuid);
 

@@ -5,9 +5,9 @@ import { useUser } from "@component/lib/authContext";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
 import FavouriteRestaurants from "@component/components/FavouriteRestaurants";
 import fetchYelpRestaurantDetails from "@component/lib/fetchYelpRestaurantDetails";
-import addToFavourites from "@component/lib/addToFavourites";
+import useAddToFavourites from "@component/lib/useAddToFavourites";
 import fetchHistory from "@component/lib/fetchHistory";
-import addToHistory from "@component/lib/addToHistory";
+import useAddToHistory from "@component/lib/useAddToHistory";
 import { useRouter } from "next/router";
 
 // route -> home/favourites
@@ -27,15 +27,15 @@ export default function Favourites() {
     }, [user, router]);
 
     // updates the users local favourites array
-    const updateFavourites = (newFavourites) => {
+    const useUpdateFavourites = (newFavourites) => {
         setFavourites(newFavourites);
-        addToFavourites(newFavourites, user.id);
+        useAddToFavourites(newFavourites, user.id);
     };
 
     // updates the users local history array
-    const updateHistory = (newHistory) => {
+    const useUpdateHistory = (newHistory) => {
         setHistory(newHistory);
-        addToHistory(newHistory, user.id);
+        useAddToHistory(newHistory, user.id);
     };
 
     // fetches latest history
@@ -98,8 +98,8 @@ export default function Favourites() {
                             restaurants={restaurants}
                             favourites={favourites}
                             setFavourites={setFavourites}
-                            updateFavourites={updateFavourites}
-                            updateHistory={updateHistory}
+                            updateFavourites={useUpdateFavourites}
+                            updateHistory={useUpdateHistory}
                             history={history}
                         />
                     )}

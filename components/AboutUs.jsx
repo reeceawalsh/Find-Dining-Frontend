@@ -34,8 +34,8 @@ const AboutUs = () => {
                 Thank you for choosing{" "}
                 <a href="/restaurants" className="orange-font">
                     Find Dining
-                </a>
-                {""}. We hope you enjoy using it and discovering new culinary
+                </a>{" "}
+                . We hope you enjoy using it and discovering new culinary
                 experiences in your area! If you have any feedback or
                 suggestions, please don't hesitate to contact us.
             </p>

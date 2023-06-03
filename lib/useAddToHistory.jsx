@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // this function adds an array of history to the users list of history. An array is needed because when you update the users list of history you must pass all of the history, not just one to add. It completely replaces the value in the database.
-export default async function addToHistory(history, uuid) {
+export default async function useAddToHistory(history, uuid) {
     console.log("history", history);
     console.log("user id", uuid);
 

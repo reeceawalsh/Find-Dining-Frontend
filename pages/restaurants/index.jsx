@@ -40,7 +40,7 @@ export default function Restaurants() {
     const [noMoreRestaurants, setNoMoreRestaurants] = useState(false);
 
     // fetches restaurant data using those parameters
-    const fetchData = async () => {
+    const useFetchData = async () => {
         setLoading(true);
         const fetchedRestaurants = await useFetchRestaurants({
             lat,
@@ -134,14 +134,14 @@ export default function Restaurants() {
     useEffect(() => {
         console.log("fetching data through dependencies");
         setRestaurants([]);
-        fetchData();
+        useFetchData();
     }, [cuisine, sortType, lat, lng, radius]);
 
     // will load more restaurants but not wipe the restaurants data because this is dependent on page turn.
     useEffect(() => {
         if (page > 1) {
             console.log("fetching data via page turn", page);
-            fetchData();
+            useFetchData();
         }
     }, [page]);
 

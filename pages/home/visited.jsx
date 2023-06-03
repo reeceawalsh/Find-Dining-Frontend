@@ -5,9 +5,9 @@ import { useUser } from "@component/lib/authContext";
 import fetchHistory from "@component/lib/fetchHistory";
 import VisitedRestaurants from "@component/components/VisitedRestaurants";
 import fetchYelpRestaurantDetails from "@component/lib/fetchYelpRestaurantDetails";
-import addToFavourites from "@component/lib/addToFavourites";
+import addToFavourites from "@component/lib/useAddToFavourites";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
-import addToHistory from "@component/lib/addToHistory";
+import useAddToHistory from "@component/lib/useAddToHistory";
 import { useRouter } from "next/router";
 
 // route -> home/visited
@@ -23,20 +23,20 @@ export default function Visited() {
     useEffect(() => {
         // redirect logged-out users to the homepage
         if (!user) {
-            router.push("/home");
+            router.push("/Home");
         }
     }, [user, router]);
 
     // updates local favourites array
-    const updateFavourites = (newFavourites) => {
+    const useUpdateFavourites = (newFavourites) => {
         setFavourites(newFavourites);
-        addToFavourites(newFavourites, user.id);
+        useAddToFavourites(newFavourites, user.id);
     };
 
     // updates local history array
-    const updateHistory = (newHistory) => {
+    const useUpdateHistory = (newHistory) => {
         setHistory(newHistory);
-        addToHistory(newHistory, user.id);
+        useAddToHistory(newHistory, user.id);
     };
 
     // fetches favourite restaurants from database
@@ -58,7 +58,7 @@ export default function Visited() {
         if (user) {
             getData();
         }
-    }, [user, favourites]);
+    }, [user]);
 
     // fetches visited restaurants from database
     const fetchVisited = async () => {
@@ -87,7 +87,7 @@ export default function Visited() {
 
     useEffect(() => {
         fetchVisited();
-    }, []);
+    }, [user]);
 
     return (
         <Layout>
@@ -103,8 +103,8 @@ export default function Visited() {
                             restaurants={restaurants}
                             favourites={favourites}
                             setHistory={setHistory}
-                            updateFavourites={updateFavourites}
-                            updateHistory={updateHistory}
+                            updateFavourites={useUpdateFavourites}
+                            updateHistory={useUpdateHistory}
                             history={history}
                         />
                     )}

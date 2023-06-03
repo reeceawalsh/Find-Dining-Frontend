@@ -9,8 +9,8 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 import fetchRestaurantID from "@component/lib/fetchRestaurantID";
-import addToFavourites from "@component/lib/addToFavourites";
-import addToHistory from "@component/lib/addToHistory";
+import useAddToFavourites from "@component/lib/useAddToFavourites";
+import useAddToHistory from "@component/lib/useAddToHistory";
 
 // restaurant component which is displayed on the list of restaurants.
 const Restaurant = ({
@@ -126,7 +126,7 @@ const Restaurant = ({
             restaurant.id &&
             clickedFavouriteRestaurant === restaurant.id
         ) {
-            addToFavourites(favourites, user.id);
+            useAddToFavourites(favourites, user.id);
         }
         //
         if (restaurant && restaurant.id) {
@@ -143,7 +143,7 @@ const Restaurant = ({
             restaurant.id &&
             clickedHistoryRestaurant === restaurant.id
         ) {
-            addToHistory(history, user.id);
+            useAddToHistory(history, user.id);
         }
         if (restaurant && restaurant.id) {
             setVisited(history.some((visited) => visited.id === restaurant.id));

@@ -2,8 +2,8 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Restaurant from "./Restaurant";
 import styles from "./styles/restaurantsList.module.css";
 import { useUser } from "@component/lib/authContext";
-import addToFavourites from "@component/lib/addToFavourites";
-import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
+import useAddToFavourites from "@component/lib/useAddToFavourites";
+import useFetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
 
 const FavouriteRestaurants = ({
     restaurants,
@@ -25,7 +25,7 @@ const FavouriteRestaurants = ({
     }, [favourites, restaurants]);
     useEffect(() => {
         const getData = async () => {
-            const data = await fetchFavouriteRestaurants(user.id);
+            const data = await useFetchFavouriteRestaurants(user.id);
             const temp = [];
             if (data) {
                 data.map((restaurant) =>

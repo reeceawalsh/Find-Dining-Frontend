@@ -6,11 +6,11 @@ import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
-import deleteAccount from "@component/lib/deleteAccount";
+import useDeleteAccount from "@component/lib/useDeleteAccount";
 import { useUser } from "@component/lib/authContext";
 import styles from "./styles/accountDataDialogs.module.css";
-import addToFavourites from "@component/lib/addToFavourites";
-import addToHistory from "@component/lib/addToHistory";
+import useAddToFavourites from "@component/lib/useAddToFavourites";
+import useAddToHistory from "@component/lib/useAddToHistory";
 
 const AccountDataDialogs = () => {
     const { user, logout } = useUser();
@@ -35,9 +35,9 @@ const AccountDataDialogs = () => {
         handleToggleSavedDataModal();
         console.log("Deleting all saved data");
         const favourites = [];
-        addToFavourites(favourites, user.id);
+        useAddToFavourites(favourites, user.id);
         const history = [];
-        addToHistory(history, user.id);
+        useAddToHistory(history, user.id);
     };
 
     // handles deleting the users account.
@@ -45,7 +45,7 @@ const AccountDataDialogs = () => {
         e.preventDefault();
         handleToggleAccountModal();
         const accessToken = user.jwt;
-        deleteAccount(user.id, accessToken, logout);
+        useDeleteAccount(user.id, accessToken, logout);
         console.log("Deleting account");
     };
 
