@@ -168,7 +168,7 @@ export default function Restaurants() {
                             <option value="" selected disabled>
                                 Select a Cuisine
                             </option>
-                            {cuisines.map((type) => {
+                            {cuisines.map((type, index) => {
                                 return (
                                     <option value={type.key} key={index}>
                                         {type.value}
@@ -183,7 +183,7 @@ export default function Restaurants() {
                             <option value="" selected disabled>
                                 Filter By:
                             </option>
-                            {filters.map((type) => {
+                            {filters.map((type, index) => {
                                 return (
                                     <option value={type.key} key={index}>
                                         {type.value}
