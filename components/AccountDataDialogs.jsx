@@ -18,8 +18,6 @@ const AccountDataDialogs = () => {
     const [openAccount, setOpenAccount] = useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-    const addToFavourites = addToFavourites();
-    const addToHistory = addToHistory();
     const deleteAccount = useDeleteAccount();
     // toggles the save data modal open and closed.
     const handleToggleSavedDataModal = () => {
