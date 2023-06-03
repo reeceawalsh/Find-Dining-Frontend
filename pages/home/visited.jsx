@@ -7,7 +7,7 @@ import VisitedRestaurants from "@component/components/VisitedRestaurants";
 import fetchYelpRestaurantDetails from "@component/lib/fetchYelpRestaurantDetails";
 import addToFavourites from "@component/lib/addToFavourites";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
-import useAddToHistory from "@component/lib/addToHistory";
+import addToHistory from "@component/lib/addToHistory";
 import { useRouter } from "next/router";
 
 // route -> home/visited
@@ -30,13 +30,13 @@ export default function Visited() {
     // updates local favourites array
     const useUpdateFavourites = (newFavourites) => {
         setFavourites(newFavourites);
-        useAddToFavourites(newFavourites, user.id);
+        addToFavourites(newFavourites, user.id);
     };
 
     // updates local history array
     const useUpdateHistory = (newHistory) => {
         setHistory(newHistory);
-        useAddToHistory(newHistory, user.id);
+        addToHistory(newHistory, user.id);
     };
 
     // fetches favourite restaurants from database

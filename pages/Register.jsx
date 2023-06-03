@@ -1,8 +1,7 @@
-import Register from "@component/components/Register";
-import Layout from "@component/components/Layout";
 import { useRouter } from "next/router";
 import { useUser } from "@component/lib/authContext";
 import { useEffect } from "react";
+import Register from "@component/components/Register";
 
 export default function RegisterPage() {
     const router = useRouter();

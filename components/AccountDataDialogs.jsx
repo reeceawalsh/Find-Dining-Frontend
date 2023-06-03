@@ -9,8 +9,8 @@ import { useState } from "react";
 import useDeleteAccount from "@component/lib/useDeleteAccount";
 import { useUser } from "@component/lib/authContext";
 import styles from "./styles/accountDataDialogs.module.css";
-import useAddToFavourites from "@component/lib/addToFavourites";
-import useAddToHistory from "@component/lib/addToHistory";
+import addToFavourites from "@component/lib/addToFavourites";
+import addToHistory from "@component/lib/addToHistory";
 
 const AccountDataDialogs = () => {
     const { user, logout } = useUser();
@@ -18,8 +18,8 @@ const AccountDataDialogs = () => {
     const [openAccount, setOpenAccount] = useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-    const addToFavourites = useAddToFavourites();
-    const addToHistory = useAddToHistory();
+    const addToFavourites = addToFavourites();
+    const addToHistory = addToHistory();
     const deleteAccount = useDeleteAccount();
     // toggles the save data modal open and closed.
     const handleToggleSavedDataModal = () => {
