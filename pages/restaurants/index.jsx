@@ -4,7 +4,7 @@ import Location from "@component/lib/locationContext";
 import RestaurantsList from "@component/components/RestaurantsList";
 import Toggle from "@component/components/FormElements/Toggle";
 import Map from "@component/components/Map";
-import useFetchRestaurants from "@component/lib/useFetchRestaurants";
+import fetchRestaurants from "@component/lib/fetchRestaurants";
 import fetchRestaurantID from "@component/lib/fetchRestaurantID";
 import cuisines from "../../lib/cuisines.json";
 import filters from "../../lib/filters.json";
@@ -35,7 +35,6 @@ export default function Restaurants() {
         () => removeDuplicatesById(restaurants),
         [restaurants]
     );
-    const fetchRestaurants = useFetchRestaurants();
     // if there are no more restaurants we want to display a message.
     const [noMoreRestaurants, setNoMoreRestaurants] = useState(false);
 
