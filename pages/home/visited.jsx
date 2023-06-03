@@ -58,7 +58,7 @@ export default function Visited() {
         if (user) {
             getData();
         }
-    }, [user]);
+    }, [user, favourites]);
 
     // fetches visited restaurants from database
     const fetchVisited = async () => {
