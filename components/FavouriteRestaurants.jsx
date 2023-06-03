@@ -2,8 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Restaurant from "./Restaurant";
 import styles from "./styles/restaurantsList.module.css";
 import { useUser } from "@component/lib/authContext";
-import useAddToFavourites from "@component/lib/addToFavourites";
-import useFetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
+import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
 
 const FavouriteRestaurants = ({
     restaurants,
@@ -14,7 +13,6 @@ const FavouriteRestaurants = ({
     updateHistory,
 }) => {
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
-    const fetchFavouriteRestaurants = useFetchFavouriteRestaurants();
     const { user } = useUser();
     useEffect(() => {
         setFilteredRestaurants(
