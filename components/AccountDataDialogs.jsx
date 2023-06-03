@@ -20,6 +20,7 @@ const AccountDataDialogs = () => {
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
     const addToFavourites = useAddToFavourites();
     const addToHistory = useAddToHistory();
+    const deleteAccount = useDeleteAccount();
     // toggles the save data modal open and closed.
     const handleToggleSavedDataModal = () => {
         setOpenSavedData(!openSavedData);
@@ -46,7 +47,7 @@ const AccountDataDialogs = () => {
         e.preventDefault();
         handleToggleAccountModal();
         const accessToken = user.jwt;
-        useDeleteAccount(user.id, accessToken, logout);
+        deleteAccount(user.id, accessToken, logout);
         console.log("Deleting account");
     };
 
