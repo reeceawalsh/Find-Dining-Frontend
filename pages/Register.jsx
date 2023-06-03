@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useUser } from "@component/lib/authContext";
 import { useEffect } from "react";
 
-export default function Register() {
+export default function RegistePage() {
     const router = useRouter();
     const { user, loading } = useUser();
 
