@@ -1,0 +1,15 @@
+/* ThirdPartyLogin */
+.container {
+  padding-top: 1.4rem;
+  width: 100%;
+  min-height: 20%;
+  height: 10rem;
+  z-index: 1;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+}
+
+.supportLinks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.linkContainer {
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  border: solid 1px black;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.link:hover {
+  border: solid 2px #ee7674;
+}
+
+.title {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.description {
+  font-size: 1rem;
+}

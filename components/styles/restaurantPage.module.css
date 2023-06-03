@@ -1,0 +1,410 @@
+.header {
+  height: 300px;
+  display: flex;
+  color: black;
+  font-size: 1.5rem;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /* border: 10px solid #EE7674; */
+  border-radius: 800px;
+  padding-top: 1rem;
+}
+
+.headerTitleContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.titleIcon {
+  position: relative;
+  top: 25px;
+  margin-left: 25px;
+}
+
+.headerRating {
+  justify-content: center;
+  display: flex;
+}
+
+.restaurantName {
+  justify-content: center;
+  display: flex;
+  font-weight: normal;
+  font-size: 4.3rem;
+  text-shadow: 0.3px 0.4px #36DBFF;
+  color: #ee7674;
+}
+
+
+.headerInfo {
+  justify-content: center;
+  display: flex;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.price {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.separatorDot {
+  color: #ee7674;
+  font-weight: bold;
+}
+
+.restaurantImage {
+  position: relative;
+  display: flex;
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
+.photos {
+  width: 100vw;
+  position: relative;
+  bottom: 120px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.categories {
+  display: flex;
+  gap: 0;
+}
+
+.yelpLink:hover {
+  text-decoration: underline;
+}
+
+.headerRating span {
+  position: relative;
+  top: 1px;
+  left: 10px;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.restaurantInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+}
+
+.subContainerTitle {
+  margin-bottom: 1rem;
+}
+
+.leftContainer {
+  position: relative;
+  margin-right: 50px;
+  margin-top: 125px;
+}
+
+.phoneNumber {
+  display: flex;
+  color: #ee7674;
+  font-weight: bold;
+}
+
+.phoneIcon {
+  margin-right: 20px;
+}
+
+.rightContainer {
+  position: relative;
+  margin-top: 50px;
+  border-left: 3px solid #ee7674;
+  padding-left: 50px;
+  max-width: 370px;
+}
+
+.yelpLogo {
+  position: relative;
+  bottom: 3px;
+  width: 76px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.yelpLink {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ratingPrice {
+  display: flex;
+  align-items: center;
+}
+
+.geolocationOff {
+  font-weight: bold;
+}
+
+.distance {
+  font-weight: bold;
+  color: #ee7674;
+}
+
+.map {
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.address {
+  margin-top: 10px;
+  font-weight: bold;
+  border: 2px dashed black;
+  padding: 10px 0 10px 10px;
+  border-radius: 5px;
+}
+
+.review {
+  border-top: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 80vw;
+}
+
+.reviewForm textarea {
+  resize: none;
+  height: 10rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.reviewForm p {
+  text-align: center;
+}
+
+.reviewForm button {
+  background-color: #EE7674;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.reviewForm button:hover {
+  background-color: #36DBFF;
+}
+
+.loadMoreButton {
+  margin-left: 1rem;
+  padding: 0.3rem;
+  background-color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.reviewTitle {
+  position: relative;
+  left: 5px;
+}
+
+.reviewRating {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.loadMoreButton:hover {
+  border: 2px solid black;
+}
+
+.map {
+  height: 20rem;
+  width: 20rem;
+}
+
+.loginToLeaveReviewMsg {
+  font-size: 1.2rem;
+}
+
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filterContainer button {
+  background-color: #EE7674;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filterContainer button:hover {
+  background-color: #36DBFF;
+  color: #ffffff;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.iconButton {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.iconButton:hover,
+.favourited {
+  color: #36DBFF;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.line {
+  width: 80vw;
+  border-top: 2px solid black;
+  margin-bottom: 3rem;
+  margin-top: -5rem;
+}
+
+.ratingWrapper {
+  width: 15rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 1.2rem;
+    height: 200px;
+    padding: 0;
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  .restaurantInfo {
+    padding-top: 0;
+    font-size: 90%;
+  }
+
+
+  .restaurantName {
+    font-size: 2.5rem;
+  }
+
+  .headerInfo {
+    font-size: 1.2rem;
+  }
+
+  .restaurantInfo {
+    text-align: center;
+  }
+
+  .restaurantImage {
+    display: none;
+  }
+
+  .subContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftContainer {
+    margin-top: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .yelpLink,
+  .phoneNumber {
+    padding-left: 2rem;
+  }
+
+  .rightContainer {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .map {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .reviewForm {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .header {
+    font-size: 1rem;
+    height: 150px;
+  }
+
+  .restaurantName {
+    font-size: 2rem;
+  }
+
+  .headerInfo {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .restaurantImage {
+    height: 150px;
+    width: 150px;
+  }
+
+
+  .subContainer {
+    margin: 3rem;
+  }
+
+  .map {
+    height: 10rem;
+    width: 10rem;
+  }
+}

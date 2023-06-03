@@ -1,0 +1,95 @@
+/* Login */
+.container {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  text-shadow: 1px 2px white;
+  color: #EE7674 !important;
+}
+
+.skip {
+  position: absolute;
+  right: 3em;
+  top: 1.5em;
+  font-size: 1.2rem;
+}
+
+.skip:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.button {
+  width: 90%;
+  background-color: #36DBFF;
+  color: #EE7674;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  box-shadow: 1px 1px 1px black;
+}
+
+.button:hover {
+  cursor: grab;
+  background-color: #EE7674;
+  color: #36DBFF;
+}
+
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}
+
+.loginForm form input {
+  margin: 0;
+  height: 2rem;
+}
+
+.email {
+  color: red;
+}
+
+#outlined-basic {
+  height: 1rem;
+}
+
+.errorMessage {
+  margin-top: -1rem;
+  font-size: 0.9rem;
+  color: red;
+  max-width: 90%;
+  margin-left: 5%;
+}
+
+.hidden {
+  display: none;
+}

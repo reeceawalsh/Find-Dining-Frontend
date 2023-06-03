@@ -1,0 +1,33 @@
+.container {
+  min-width: 100%;
+  margin-top: 0;
+  justify-content: space-between;
+  display: flex;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  display: flex;
+  position: relative;
+  top: 10px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.title {
+  color: #ee7674;
+  text-align: left;
+}
+
+.description {
+  color: blue;
+}

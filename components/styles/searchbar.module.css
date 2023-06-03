@@ -1,0 +1,133 @@
+.dropdownItem {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.dropdownItem:hover {
+  /* font-weight: bold; */
+  color: #ee7674;
+}
+
+.activeItem {
+  color: #ee7674;
+}
+
+.dropdownItem:last-child {
+  border-radius: 0 0 18px 18px;
+}
+
+.dropdownWrapper {
+  background-color: white;
+  max-width: 600px;
+  cursor: pointer;
+  border-radius: 2px 2px 20px 20px;
+  border: 2px solid #ee7674;
+  border-top: 0;
+  margin-top: -1.2rem;
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+.dropdownWrapper .searchbar {
+  padding: 2px;
+}
+
+.dropdownWrapper:last-child {
+  border-radius: 0 0 20px 20px;
+}
+
+.searchbarContainer {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3rem;
+}
+
+.searchbar {
+  width: 600px;
+  padding-left: 1rem;
+  border-radius: 20px 0 0 20px;
+  height: 69px;
+  outline: none;
+  border: 2px solid #d9d9d9;
+  border-right: 0;
+  padding-right: 1rem;
+}
+
+.searchbar:focus,
+.searchbar:active {
+  border: 2px solid #ee7674;
+  border-radius: 20px 0 0 0;
+  border-right: 0;
+}
+
+.button {
+  background: white;
+  border-radius: 0 20px 20px 0;
+  border: 2px solid #ee7674;
+  border-left: none;
+  background: #ee7674;
+  padding: 0 50px 0 50px;
+}
+
+.searchIcon {
+  justify-content: center;
+}
+
+.button:hover {
+  background: #36dbff;
+  border: 2px solid #36dbff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 853px) {
+  .searchbarContainer {
+    font-size: 1rem;
+  }
+
+  .searchbar {
+    height: 4rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .searchbarContainer {
+    font-size: 0.8rem;
+  }
+
+  .dropdownWrapper {
+    max-width: 350px;
+  }
+
+  .button {
+    padding: 0 20px 0 20px;
+  }
+
+  .searchbar {
+    width: 350px;
+  }
+
+  .dropdownItem {
+    height: auto;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .searchbarContainer {
+    font-size: 0.7rem;
+  }
+
+  .dropdownWrapper {
+    max-width: 325px;
+  }
+
+  .searchbar {
+    width: 250px;
+    height: 3rem;
+  }
+}
