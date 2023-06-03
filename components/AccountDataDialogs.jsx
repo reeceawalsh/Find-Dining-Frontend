@@ -9,8 +9,8 @@ import { useState } from "react";
 import useDeleteAccount from "@component/lib/useDeleteAccount";
 import { useUser } from "@component/lib/authContext";
 import styles from "./styles/accountDataDialogs.module.css";
-import useAddToFavourites from "@component/lib/useAddToFavourites";
-import useAddToHistory from "@component/lib/useAddToHistory";
+import useAddToFavourites from "@component/lib/addToFavourites";
+import useAddToHistory from "@component/lib/addToHistory";
 
 const AccountDataDialogs = () => {
     const { user, logout } = useUser();

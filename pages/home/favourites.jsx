@@ -5,10 +5,10 @@ import { useUser } from "@component/lib/authContext";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
 import FavouriteRestaurants from "@component/components/FavouriteRestaurants";
 import fetchYelpRestaurantDetails from "@component/lib/fetchYelpRestaurantDetails";
-import useAddToFavourites from "@component/lib/useAddToFavourites";
 import fetchHistory from "@component/lib/fetchHistory";
-import useAddToHistory from "@component/lib/useAddToHistory";
+import addToHistory from "@component/lib/addToHistory";
 import { useRouter } from "next/router";
+import addToFavourites from "@component/lib/addToFavourites";
 
 // route -> home/favourites
 export default function Favourites() {
@@ -29,13 +29,13 @@ export default function Favourites() {
     // updates the users local favourites array
     const useUpdateFavourites = (newFavourites) => {
         setFavourites(newFavourites);
-        useAddToFavourites(newFavourites, user.id);
+        addToFavourites(newFavourites, user.id);
     };
 
     // updates the users local history array
     const useUpdateHistory = (newHistory) => {
         setHistory(newHistory);
-        useAddToHistory(newHistory, user.id);
+        addToHistory(newHistory, user.id);
     };
 
     // fetches latest history

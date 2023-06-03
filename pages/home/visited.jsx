@@ -5,9 +5,9 @@ import { useUser } from "@component/lib/authContext";
 import fetchHistory from "@component/lib/fetchHistory";
 import VisitedRestaurants from "@component/components/VisitedRestaurants";
 import fetchYelpRestaurantDetails from "@component/lib/fetchYelpRestaurantDetails";
-import addToFavourites from "@component/lib/useAddToFavourites";
+import addToFavourites from "@component/lib/addToFavourites";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
-import useAddToHistory from "@component/lib/useAddToHistory";
+import useAddToHistory from "@component/lib/addToHistory";
 import { useRouter } from "next/router";
 
 // route -> home/visited

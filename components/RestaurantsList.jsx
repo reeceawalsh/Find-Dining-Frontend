@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import Restaurant from "./Restaurant";
 import styles from "./styles/restaurantsList.module.css";
 import { useUser } from "@component/lib/authContext";
-import addToFavourites from "@component/lib/useAddToFavourites";
+import addToFavourites from "@component/lib/addToFavourites";
 import fetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
-import addToHistory from "@component/lib/useAddToHistory";
+import addToHistory from "@component/lib/addToHistory";
 import fetchHistory from "@component/lib/fetchHistory";
 
 // this component is the list view which shows a list of restaurants.

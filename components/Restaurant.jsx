@@ -9,8 +9,8 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 import fetchRestaurantID from "@component/lib/fetchRestaurantID";
-import useAddToFavourites from "@component/lib/useAddToFavourites";
-import useAddToHistory from "@component/lib/useAddToHistory";
+import addToFavourites from "@component/lib/addToFavourites";
+import addToHistory from "@component/lib/addToHistory";
 
 // restaurant component which is displayed on the list of restaurants.
 const Restaurant = ({
@@ -29,8 +29,6 @@ const Restaurant = ({
         useState(null);
     const [clickedHistoryRestaurant, setClickedHistoryRestaurant] =
         useState(null);
-    const addToFavourites = useAddToFavourites(favourites, user.id);
-    const addToHistory = useAddToHistory(history, user.id);
 
     /* fetches the restaurant data for the restaurant, if it can't find the restaurant then fetchRestaurantID will add it to the database. This restaurantData will return an object like so
     {createdAt : "2023-04-25T10:59:12.160Z"
@@ -122,6 +120,7 @@ const Restaurant = ({
 
     // if the current restaurant is the one that was clicked, a user is logged in, and the restaurant exists, then add it to favourites. The dependency array ensures it checks each time the favourites, restaurant or clickedRestaurant reports.
 
+    // if the current restaurant is the one that was clicked, a user is logged in, and the restaurant exists, then add it to favourites. The dependency array ensures it checks each time the favourites, restaurant or clickedRestaurant reports.
     useEffect(() => {
         if (
             user &&
@@ -129,12 +128,15 @@ const Restaurant = ({
             restaurant.id &&
             clickedFavouriteRestaurant === restaurant.id
         ) {
-            addToFavourites();
+            addToFavourites(favourites, user.id);
         }
+        //
         if (restaurant && restaurant.id) {
+            // checks if atleast one of the restaurants id's matches this restaurants id.
             setFavourite(favourites.some((fav) => fav.id === restaurant.id));
         }
-    }, [favourites, restaurant, clickedFavouriteRestaurant, user]);
+    }, [favourites, restaurant, clickedFavouriteRestaurant]);
+
     // same as above but for history.
     useEffect(() => {
         if (
@@ -143,7 +145,7 @@ const Restaurant = ({
             restaurant.id &&
             clickedHistoryRestaurant === restaurant.id
         ) {
-            addToHistory();
+            addToHistory(history, user.id);
         }
         if (restaurant && restaurant.id) {
             setVisited(history.some((visited) => visited.id === restaurant.id));

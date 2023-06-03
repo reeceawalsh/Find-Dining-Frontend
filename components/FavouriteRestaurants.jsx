@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Restaurant from "./Restaurant";
 import styles from "./styles/restaurantsList.module.css";
 import { useUser } from "@component/lib/authContext";
-import useAddToFavourites from "@component/lib/useAddToFavourites";
+import useAddToFavourites from "@component/lib/addToFavourites";
 import useFetchFavouriteRestaurants from "@component/lib/fetchFavouriteRestaurants";
 
 const FavouriteRestaurants = ({
