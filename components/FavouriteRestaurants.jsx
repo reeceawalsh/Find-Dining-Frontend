@@ -14,7 +14,7 @@ const FavouriteRestaurants = ({
     updateHistory,
 }) => {
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
-
+    const fetchFavouriteRestaurants = useFetchFavouriteRestaurants();
     const { user } = useUser();
     useEffect(() => {
         setFilteredRestaurants(
@@ -25,7 +25,7 @@ const FavouriteRestaurants = ({
     }, [favourites, restaurants]);
     useEffect(async () => {
         if (user) {
-            const data = await useFetchFavouriteRestaurants(user.id);
+            const data = await fetchFavouriteRestaurants(user.id);
             const temp = [];
             if (data) {
                 data.map((restaurant) =>

@@ -35,14 +35,14 @@ export default function Restaurants() {
         () => removeDuplicatesById(restaurants),
         [restaurants]
     );
-
+    const fetchRestaurants = useFetchRestaurants();
     // if there are no more restaurants we want to display a message.
     const [noMoreRestaurants, setNoMoreRestaurants] = useState(false);
 
     // fetches restaurant data using those parameters
-    const useFetchData = () => {
+    const fetchData = () => {
         setLoading(true);
-        useFetchRestaurants({
+        fetchRestaurants({
             lat,
             lng,
             cuisine,
@@ -129,14 +129,14 @@ export default function Restaurants() {
     useEffect(() => {
         console.log("fetching data through dependencies");
         setRestaurants([]);
-        useFetchData();
+        fetchData();
     }, [cuisine, sortType, lat, lng, radius]);
 
     // will load more restaurants but not wipe the restaurants data because this is dependent on page turn.
     useEffect(() => {
         if (page > 1) {
             console.log("fetching data via page turn", page);
-            useFetchData();
+            fetchData();
         }
     }, [page]);
 

@@ -18,7 +18,8 @@ const AccountDataDialogs = () => {
     const [openAccount, setOpenAccount] = useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+    const addToFavourites = useAddToFavourites();
+    const addToHistory = useAddToHistory();
     // toggles the save data modal open and closed.
     const handleToggleSavedDataModal = () => {
         setOpenSavedData(!openSavedData);
@@ -30,18 +31,18 @@ const AccountDataDialogs = () => {
     };
 
     // handles deleting all saved data.
-    const useHandleDeleteAllSavedData = (e) => {
+    const handleDeleteAllSavedData = (e) => {
         e.preventDefault();
         handleToggleSavedDataModal();
         console.log("Deleting all saved data");
         const favourites = [];
-        useAddToFavourites(favourites, user.id);
+        addToFavourites(favourites, user.id);
         const history = [];
-        useAddToHistory(history, user.id);
+        addToHistory(history, user.id);
     };
 
     // handles deleting the users account.
-    const useHandleDeleteAccount = (e) => {
+    const handleDeleteAccount = (e) => {
         e.preventDefault();
         handleToggleAccountModal();
         const accessToken = user.jwt;
@@ -85,7 +86,7 @@ const AccountDataDialogs = () => {
                     <Button
                         autoFocus
                         onClick={(e) => {
-                            useHandleDeleteAllSavedData(e);
+                            handleDeleteAllSavedData(e);
                         }}
                     >
                         Yes
@@ -112,7 +113,7 @@ const AccountDataDialogs = () => {
                     <Button
                         autoFocus
                         onClick={(e) => {
-                            useHandleDeleteAccount(e);
+                            handleDeleteAccount(e);
                         }}
                     >
                         Yes
