@@ -70,7 +70,7 @@ const Login = () => {
     // handles pressing the register button which will route the user to the registration page.
     const handleRegister = (e) => {
         e.preventDefault();
-        router.push("/Register");
+        router.push("/register");
     };
 
     // checks for errors using the validation rules located in the  LoginVR file in the validationRules folder.
