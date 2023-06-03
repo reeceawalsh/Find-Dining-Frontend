@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const deleteAccount = (userId, accessToken, logout) => {
+const useDeleteAccount = (userId, accessToken, logout) => {
     let data = {
         userId: userId,
         token: accessToken,
@@ -16,4 +16,4 @@ const deleteAccount = (userId, accessToken, logout) => {
             console.error("Error:", error);
         });
 };
-export default deleteAccount;
+export default useDeleteAccount;
