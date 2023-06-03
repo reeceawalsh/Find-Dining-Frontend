@@ -23,8 +23,8 @@ const FavouriteRestaurants = ({
             )
         );
     }, [favourites, restaurants]);
-    useEffect(() => {
-        const getData = async () => {
+    useEffect(async () => {
+        if (user) {
             const data = await useFetchFavouriteRestaurants(user.id);
             const temp = [];
             if (data) {
@@ -37,9 +37,6 @@ const FavouriteRestaurants = ({
                 setFavourites(temp);
                 console.log(favourites);
             }
-        };
-        if (user) {
-            getData();
         }
     }, [user]);
 

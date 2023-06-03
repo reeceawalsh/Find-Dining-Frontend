@@ -1,5 +1,6 @@
 import styles from "./styles/aboutUs.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 // this component displays information describing the project and giving some information about our team
 const AboutUs = () => {
@@ -32,12 +33,12 @@ const AboutUs = () => {
             </p>
             <p>
                 Thank you for choosing{" "}
-                <a href="/restaurants" className="orange-font">
-                    Find Dining
-                </a>{" "}
+                <Link href="/restaurants">
+                    <a className="orange-font">Find Dining</a>
+                </Link>{" "}
                 . We hope you enjoy using it and discovering new culinary
                 experiences in your area! If you have any feedback or
-                suggestions, please don't hesitate to contact us.
+                suggestions, please don&apos;t hesitate to contact us.
             </p>
             <Image
                 className={styles.logo}

@@ -29,6 +29,8 @@ const Restaurant = ({
         useState(null);
     const [clickedHistoryRestaurant, setClickedHistoryRestaurant] =
         useState(null);
+    const addToFavourites = useAddToFavourites(favourites, user.id);
+    const addToHistory = useAddToHistory(history, user.id);
 
     /* fetches the restaurant data for the restaurant, if it can't find the restaurant then fetchRestaurantID will add it to the database. This restaurantData will return an object like so
     {createdAt : "2023-04-25T10:59:12.160Z"
@@ -119,6 +121,7 @@ const Restaurant = ({
     }, [cookies]);
 
     // if the current restaurant is the one that was clicked, a user is logged in, and the restaurant exists, then add it to favourites. The dependency array ensures it checks each time the favourites, restaurant or clickedRestaurant reports.
+
     useEffect(() => {
         if (
             user &&
@@ -126,15 +129,12 @@ const Restaurant = ({
             restaurant.id &&
             clickedFavouriteRestaurant === restaurant.id
         ) {
-            useAddToFavourites(favourites, user.id);
+            addToFavourites();
         }
-        //
         if (restaurant && restaurant.id) {
-            // checks if atleast one of the restaurants id's matches this restaurants id.
             setFavourite(favourites.some((fav) => fav.id === restaurant.id));
         }
-    }, [favourites, restaurant, clickedFavouriteRestaurant]);
-
+    }, [favourites, restaurant, clickedFavouriteRestaurant, user]);
     // same as above but for history.
     useEffect(() => {
         if (
@@ -143,7 +143,7 @@ const Restaurant = ({
             restaurant.id &&
             clickedHistoryRestaurant === restaurant.id
         ) {
-            useAddToHistory(history, user.id);
+            addToHistory();
         }
         if (restaurant && restaurant.id) {
             setVisited(history.some((visited) => visited.id === restaurant.id));

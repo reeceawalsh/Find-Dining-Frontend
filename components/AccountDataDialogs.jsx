@@ -30,7 +30,7 @@ const AccountDataDialogs = () => {
     };
 
     // handles deleting all saved data.
-    const handleDeleteAllSavedData = (e) => {
+    const useHandleDeleteAllSavedData = (e) => {
         e.preventDefault();
         handleToggleSavedDataModal();
         console.log("Deleting all saved data");
@@ -41,7 +41,7 @@ const AccountDataDialogs = () => {
     };
 
     // handles deleting the users account.
-    const handleDeleteAccount = (e) => {
+    const useHandleDeleteAccount = (e) => {
         e.preventDefault();
         handleToggleAccountModal();
         const accessToken = user.jwt;
@@ -85,7 +85,7 @@ const AccountDataDialogs = () => {
                     <Button
                         autoFocus
                         onClick={(e) => {
-                            handleDeleteAllSavedData(e);
+                            useHandleDeleteAllSavedData(e);
                         }}
                     >
                         Yes
@@ -112,7 +112,7 @@ const AccountDataDialogs = () => {
                     <Button
                         autoFocus
                         onClick={(e) => {
-                            handleDeleteAccount(e);
+                            useHandleDeleteAccount(e);
                         }}
                     >
                         Yes

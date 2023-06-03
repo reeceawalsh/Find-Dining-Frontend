@@ -40,9 +40,9 @@ export default function Restaurants() {
     const [noMoreRestaurants, setNoMoreRestaurants] = useState(false);
 
     // fetches restaurant data using those parameters
-    const useFetchData = async () => {
+    const useFetchData = () => {
         setLoading(true);
-        const fetchedRestaurants = await useFetchRestaurants({
+        useFetchRestaurants({
             lat,
             lng,
             cuisine,
@@ -51,33 +51,28 @@ export default function Restaurants() {
             offset: (page - 1) * 30,
             limit: 30,
             is_closed: false,
-        });
+        }).then((fetchedRestaurants) => {
+            if (fetchedRestaurants.length < 30) {
+                console.log("no more restaurants");
+                setLoading(false);
+                setNoMoreRestaurants(true);
+            }
 
-        // if there are less than 30 restaurants then we need to tell the user theres no more restaurants so we don't attempt to fetch more restaurants and the user doesn't expect more.
-        if (fetchedRestaurants.length < 30) {
-            console.log("no more restaurants");
+            const newRestaurants = fetchedRestaurants.filter(
+                (restaurant) => !restaurants.find((r) => r.id === restaurant.id)
+            );
+
+            setRestaurants((prevRestaurants) => [
+                ...prevRestaurants,
+                ...newRestaurants,
+            ]);
+
+            newRestaurants.forEach(async (restaurant) => {
+                await fetchRestaurantID(restaurant.id, restaurant.name);
+            });
+
             setLoading(false);
-            setNoMoreRestaurants(true);
-        }
-
-        // new restaurants ensure the restaurants don't already exist in our array of restaurants
-        const newRestaurants = fetchedRestaurants.filter(
-            (restaurant) => !restaurants.find((r) => r.id === restaurant.id)
-        );
-
-        // set the restaurants to equal our previous restaurants plus the new filtered restaurants
-        setRestaurants((prevRestaurants) => [
-            ...prevRestaurants,
-            ...newRestaurants,
-        ]);
-
-        // for every restaurant that we get, it will fetch the restaurantID (our unique uuid that every restaurant in our database has), if it cannot find the restaurantID it will add them to the database, this functionality is contained within fetchRestaurantID. we need the restaurants in our database for reviews, favourites and history. doing it at this point ensures no delays, rather than doing it at another point.
-        newRestaurants.forEach(async (restaurant) => {
-            await fetchRestaurantID(restaurant.id, restaurant.name);
         });
-
-        // set loading to false as the new restaurants have been loaded in.
-        setLoading(false);
     };
 
     // creates a set of ids then filters through and ensures that the restaurants don't have multiple ids, this is extra sanitisation to ensure no duplicates have got through.
@@ -175,7 +170,7 @@ export default function Restaurants() {
                             </option>
                             {cuisines.map((type) => {
                                 return (
-                                    <option value={type.key}>
+                                    <option value={type.key} key={index}>
                                         {type.value}
                                     </option>
                                 );
@@ -190,7 +185,7 @@ export default function Restaurants() {
                             </option>
                             {filters.map((type) => {
                                 return (
-                                    <option value={type.key}>
+                                    <option value={type.key} key={index}>
                                         {type.value}
                                     </option>
                                 );

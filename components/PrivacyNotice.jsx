@@ -15,7 +15,7 @@ export default function PrivacyNotice() {
                 following information:
             </p>
             <ul>
-                <li>Your device's unique identifier</li>
+                <li>Your device`&apos;`s unique identifier</li>
                 <li>Your location</li>
                 <li>Your search history and preferences</li>
                 <li>
@@ -32,7 +32,9 @@ export default function PrivacyNotice() {
                     Displaying relevant search results based on your location
                     and preferences
                 </li>
-                <li>Improving the app's functionality and user experience</li>
+                <li>
+                    Improving the app`&apos;`s functionality and user experience
+                </li>
                 <li>
                     Analyzing user behavior to better understand how people use
                     the app

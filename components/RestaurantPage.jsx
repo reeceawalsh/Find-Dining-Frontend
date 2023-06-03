@@ -412,9 +412,9 @@ const RestaurantPage = ({
                         {/* This error message will appear if the user tries to submit a message without writing enough characters. */}
                         {error && (
                             <p className="error">
-                                I'm sorry, we don't expect War and Peace, but a
-                                few more words would make a world of difference,
-                                thank you!
+                                I`&lsquo;`m sorry, we don`&lsquo;`t expect War
+                                and Peace, but a few more words would make a
+                                world of difference, thank you!
                             </p>
                         )}
                         <button type="submit">Submit</button>

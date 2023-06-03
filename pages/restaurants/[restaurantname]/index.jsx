@@ -17,7 +17,7 @@ export default function RestaurantInfo() {
     const [reviews, setReviews] = useState([]);
     const [strapiRestaurantDetails, setStrapiRestaurantDetails] =
         useState(null);
-    const restaurantName = getRestaurantName(router.asPath);
+    const restaurantName = getRestaurantName(router);
     const restaurantId = router.query.id;
 
     // base url path (/restaurants/[restaurantname]))
