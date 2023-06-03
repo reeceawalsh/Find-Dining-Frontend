@@ -82,7 +82,7 @@ export default function Favourites() {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    });
 
     return (
         <Layout>
