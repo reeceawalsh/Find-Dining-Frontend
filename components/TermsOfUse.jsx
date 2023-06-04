@@ -58,9 +58,9 @@ export default function TermsOfUse() {
             <p>
                 All content, trademarks, service marks, logos, and other
                 intellectual property displayed on our website are the property
-                of [Your Company Name] or third parties. You may not use,
-                reproduce, modify, or distribute any content from our website
-                without our prior written consent.
+                of Find Dining or third parties. You may not use, reproduce,
+                modify, or distribute any content from our website without our
+                prior written consent.
             </p>
 
             <h2>User Accounts</h2>
