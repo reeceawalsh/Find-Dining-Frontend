@@ -9,6 +9,11 @@ const nextConfig = {
                 destination: "/home",
                 permanent: true,
             },
+            {
+                source: "/register",
+                destination: "/signup",
+                permanent: true,
+            },
         ];
     },
 };
