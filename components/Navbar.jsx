@@ -183,7 +183,7 @@ const Navbar = ({ page }) => {
                             <NavLink className={styles.link} href="/login">
                                 Login
                             </NavLink>
-                            <NavLink className={styles.link} href="/Register">
+                            <NavLink className={styles.link} href="/signup">
                                 Register
                             </NavLink>
                         </>
