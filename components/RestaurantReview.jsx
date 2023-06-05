@@ -4,7 +4,6 @@ import formatDate from "@component/lib/formatData";
 import { useState } from "react";
 // restaurant review component for an individual review, these reviews are found on the RestaurantPage.
 export default function RestaurantReview({ review }) {
-    console.log(review);
     // controls whether the review is expanded or not (long reviews are made smaller and bigger via a button)
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpanded = () => {

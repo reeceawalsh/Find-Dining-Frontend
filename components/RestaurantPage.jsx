@@ -147,7 +147,7 @@ const RestaurantPage = ({
         // iterate over each review
         reviews.forEach((review) => {
             // round the rating to the nearest integer
-            const rating = Math.round(review.rating);
+            const rating = Math.round(review.attributes.rating);
             // if the rating doesn't exist in the ratingCounts object, add it and initialize the count to 1
             if (!ratingCounts[rating]) {
                 ratingCounts[rating] = 1;
