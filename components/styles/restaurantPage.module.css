@@ -227,11 +227,17 @@
 }
 
 .loadMoreButton {
+  background-color: #EE7674;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   margin-left: 1rem;
-  padding: 0.3rem;
-  background-color: transparent;
-  border-radius: 2px;
+  margin-top: 0.5rem;
+  border: none;
   cursor: pointer;
+  align-self: center;
+  width: 150px;
+  border-radius: 5px;
 }
 
 .reviewTitle {
@@ -245,7 +251,7 @@
 }
 
 .loadMoreButton:hover {
-  border: 2px solid black;
+  background-color: #36DBFF;
 }
 
 .map {

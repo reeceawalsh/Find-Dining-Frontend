@@ -166,7 +166,7 @@ const RestaurantPage = ({
             setFilteredReviews(reviews);
         } else {
             const newFilteredReviews = reviews.filter(
-                (review) => review.rating === rating
+                (review) => review.attributes.rating === rating
             );
             setFilteredReviews(newFilteredReviews);
         }
