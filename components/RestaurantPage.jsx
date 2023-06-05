@@ -129,7 +129,6 @@ const RestaurantPage = ({
             if (response.status === 201) {
                 const newReview = response.data.data;
                 console.log("Created new review:", newReview);
-
                 // need to update the local reviews as they wont automatically change until page load
                 setReviews((prevReviews) => [...prevReviews, newReview]);
                 setFilteredReviews((prevFilteredReviews) => [
@@ -372,7 +371,7 @@ const RestaurantPage = ({
                         .slice(0, displayedReviewsCount)
                         .map((review, index) => (
                             <div key={index} className={styles.review}>
-                                <RestaurantReview review={review} />
+                                <RestaurantReview review={review.attributes} />
                             </div>
                         ))}
                 {/* If there are less reviews shown than actual reviews, this show more button will appear to allow the user to show more reviews (just increases the amount of reviews that are shown, doesn't hide previous ones. */}

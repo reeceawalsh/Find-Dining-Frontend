@@ -9,7 +9,7 @@ export default async function fetchRestaurantReviews(id) {
             const response = await axios.get(
                 `/api/getReviewsByRestaurant?id=${id}`
             );
-            const reviews = response.data.data.reviews;
+            const reviews = response.data.data.attributes.reviews.data;
             console.log("Reviews for this restaurant:", reviews);
             return reviews;
         } catch (error) {
