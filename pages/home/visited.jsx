@@ -39,22 +39,22 @@ export default function Visited() {
         addToHistory(newHistory, user.id);
     };
 
+    const getData = async () => {
+        const data = await fetchFavouriteRestaurants(user.id);
+        const temp = [];
+        if (data) {
+            data.map((restaurant) =>
+                temp.push({
+                    uuid: restaurant.id,
+                    id: restaurant.restaurantID,
+                })
+            );
+            setFavourites(temp);
+        }
+    };
+
     // fetches favourite restaurants from database
     useEffect(() => {
-        const getData = async () => {
-            const data = await fetchFavouriteRestaurants(user.id);
-            const temp = [];
-            if (data) {
-                data.map((restaurant) =>
-                    temp.push({
-                        uuid: restaurant.id,
-                        id: restaurant.restaurantID,
-                    })
-                );
-                setFavourites(temp);
-                console.log(favourites);
-            }
-        };
         if (user) {
             getData();
         }

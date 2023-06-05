@@ -38,21 +38,21 @@ export default function Favourites() {
         addToHistory(newHistory, user.id);
     };
 
+    const getData = async () => {
+        const data = await fetchHistory(user.id);
+        const temp = [];
+        if (data) {
+            data.map((restaurant) =>
+                temp.push({
+                    uuid: restaurant.id,
+                    id: restaurant.restaurantID,
+                })
+            );
+            setHistory(temp);
+        }
+    };
     // fetches latest history
     useEffect(() => {
-        const getData = async () => {
-            const data = await fetchHistory(user.id);
-            const temp = [];
-            if (data) {
-                data.map((restaurant) =>
-                    temp.push({
-                        uuid: restaurant.id,
-                        id: restaurant.restaurantID,
-                    })
-                );
-                setHistory(temp);
-            }
-        };
         if (user) {
             getData();
         }

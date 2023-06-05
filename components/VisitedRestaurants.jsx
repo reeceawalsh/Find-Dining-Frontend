@@ -27,22 +27,24 @@ const VisitedRestaurants = ({
 
     // updates history with the databases history
     useEffect(() => {
-        const getData = async () => {
-            const data = await fetchHistory(user.id);
-            const temp = [];
-            if (data) {
-                data.map((restaurant) =>
-                    temp.push({
-                        uuid: restaurant.id,
-                        id: restaurant.restaurantID,
-                    })
-                );
-                setHistory(temp);
+        const fetchData = async () => {
+            if (user) {
+                const data = await fetchHistory(user.id);
+                const temp = [];
+                if (data) {
+                    data.map((restaurant) =>
+                        temp.push({
+                            uuid: restaurant.id,
+                            id: restaurant.restaurantID,
+                        })
+                    );
+                    setHistory(temp);
+                    console.log(favourites);
+                }
             }
         };
-        if (user) {
-            getData();
-        }
+
+        fetchData();
     }, [user]);
 
     return (

@@ -11,8 +11,10 @@
   background-color: #FFF;
   transition: background-color 0.3s ease;
   border: 1px solid #EE7674;
+  color: #EE7674;
 }
 
 .selectedValue {
   background-color: #EE7674;
+  color: white;
 }

@@ -71,6 +71,10 @@
   padding-left: 1.8rem;
 }
 
+.individualRestaurantContainer h4 {
+  text-align: left;
+}
+
 .individualRestaurantContainer:hover {
   border: 1px solid #ee7674;
 }
@@ -115,19 +119,22 @@
 }
 
 .loadBtn {
-  padding: 0.4rem;
-  color: black;
-  font-weight: 500;
-  border-radius: 15px;
+  background-color: #EE7674;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border: none;
   cursor: pointer;
-  border: 1px solid #ee7674;
-  letter-spacing: 2px;
-  background: transparent;
+  align-self: center;
+  width: 80%;
+  border-radius: 5px;
 }
 
 .loadBtn:hover {
-  border: 1px solid black;
-  background: #ee7674;
+  border: 0.8px solid black;
+  color: black;
 }
 
 

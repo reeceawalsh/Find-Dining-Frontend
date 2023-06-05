@@ -21,21 +21,25 @@ const FavouriteRestaurants = ({
             )
         );
     }, [favourites, restaurants]);
-    useEffect(async () => {
-        if (user) {
-            const data = await fetchFavouriteRestaurants(user.id);
-            const temp = [];
-            if (data) {
-                data.map((restaurant) =>
-                    temp.push({
-                        uuid: restaurant.id,
-                        id: restaurant.restaurantID,
-                    })
-                );
-                setFavourites(temp);
-                console.log(favourites);
+    useEffect(() => {
+        const fetchData = async () => {
+            if (user) {
+                const data = await fetchFavouriteRestaurants(user.id);
+                const temp = [];
+                if (data) {
+                    data.map((restaurant) =>
+                        temp.push({
+                            uuid: restaurant.id,
+                            id: restaurant.restaurantID,
+                        })
+                    );
+                    setFavourites(temp);
+                    console.log(favourites);
+                }
             }
-        }
+        };
+
+        fetchData();
     }, [user]);
 
     return (

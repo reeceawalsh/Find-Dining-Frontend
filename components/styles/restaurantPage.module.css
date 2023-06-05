@@ -223,7 +223,7 @@
 }
 
 .reviewForm button:hover {
-  background-color: #36DBFF;
+  border: 0.8px solid black;
 }
 
 .loadMoreButton {
@@ -251,7 +251,7 @@
 }
 
 .loadMoreButton:hover {
-  background-color: #36DBFF;
+  border: 0.8px solid black;
 }
 
 .map {
