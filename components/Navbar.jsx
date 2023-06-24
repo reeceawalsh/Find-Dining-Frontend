@@ -80,7 +80,7 @@ const Navbar = ({ page }) => {
                             <span className="white-font">Dining</span>
                         </div>
                     </Link>
-                    {location && (
+                    {location.lat && location.lng && (
                         <button
                             className={styles.postalCodeButton}
                             onClick={handleSearch}

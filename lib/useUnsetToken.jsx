@@ -6,6 +6,8 @@ const useUnsetToken = () => {
         removeCookie("jwt", { path: "/" });
         removeCookie("username", { path: "/" });
         removeCookie("id", { path: "/" });
+        removeCookie("email", { path: "/" });
+        removeCookie("orcidAccount", { path: "/" });
     };
 
     return unsetToken;
