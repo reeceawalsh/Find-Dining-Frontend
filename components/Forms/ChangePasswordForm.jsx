@@ -13,6 +13,7 @@ export default function ChangePasswordForm({
     return (
         <div>
             <form>
+                <h1 className={styles.heading}>Change Password</h1>
                 <TextInput
                     className={styles.password}
                     name="Password"
@@ -62,13 +63,6 @@ export default function ChangePasswordForm({
                     data-testid="change-password-button"
                 >
                     Change Password
-                </button>
-                <button
-                    className={styles.button}
-                    onClick={toggleDialog}
-                    data-testid="back-button"
-                >
-                    Back
                 </button>
             </form>
         </div>

@@ -16,6 +16,12 @@
   text-align: left;
 }
 
+.heading {
+  padding-bottom: 1rem;
+  color: #ee7674;
+  text-align: left;
+}
+
 .changePasswordContainer {
   background-color: cadetblue;
 }

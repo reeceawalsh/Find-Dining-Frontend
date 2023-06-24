@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
-import useDeleteAccount from "@component/lib/useDeleteAccount";
+import deleteAccount from "@component/lib/deleteAccount";
 import { useUser } from "@component/lib/authContext";
 import styles from "./styles/accountDataDialogs.module.css";
 import addToFavourites from "@component/lib/addToFavourites";
@@ -18,7 +18,6 @@ const AccountDataDialogs = () => {
     const [openAccount, setOpenAccount] = useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-    const deleteAccount = useDeleteAccount();
     // toggles the save data modal open and closed.
     const handleToggleSavedDataModal = () => {
         setOpenSavedData(!openSavedData);
