@@ -7,10 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "test": "jest --watch",
-        "format": "prettier --list-different \"./**/*.{js,jsx,json,md}\"",
-        "cypress": "cypress open",
-        "e2e": "start-server-and-test dev http://localhost:5174 \"cypress open --e2e\""
+        "format": "prettier --list-different \"./**/*.{js,jsx,json,md}\""
     },
     "dependencies": {
         "@emotion/react": "^11.10.6",
