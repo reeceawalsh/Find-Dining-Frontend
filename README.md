@@ -1,4 +1,4 @@
-<img align="left" width="auto" height="120" src="frontend/public/LogoCropped.png" />
+<img align="left" width="auto" height="120" src="/public/LogoCropped.png" />
 
 # [Find Dining](https://find-dining.herokuapp.com/home)
 
